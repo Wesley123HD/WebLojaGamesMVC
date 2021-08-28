@@ -1,0 +1,41 @@
+﻿@model WebLojaGamesMVC.Models.Jogo
+@{
+    ViewBag.Title = "Games";
+}
+
+<h2>Listar</h2>
+<div><b>Codigo do Jogo</b></div>
+<div>
+    @Model.JogoCod
+</div>
+<div><b>Nome do Jogo</b></div>
+<div>
+    @Model.JogoNome
+</div>
+<div><b>Desenvolvedor do Jogo</b></div>
+<div>
+    @Model.JogoDev
+</div>
+<div><b>Gênero do Jogo</b></div>
+<div>
+    @Model.JogoGen
+</div>
+<div><b>Faixa Etária do Jogo</b></div>
+<div>
+    @Model.JogoFaixa
+</div>
+<div><b>Plataforma do Jogo</b></div>
+<div>
+    @Model.JogoPlat
+</div>
+<div><b>Ano de Lançamento do Jogo</b></div>
+<div>
+    @Model.JogoAno
+</div>
+<div><b>Sinopse do Jogo</b></div>
+<div>
+    @Model.JogoSin
+</div>
+<br />
+@Html.ActionLink("Voltar", "Index", "Home")
+

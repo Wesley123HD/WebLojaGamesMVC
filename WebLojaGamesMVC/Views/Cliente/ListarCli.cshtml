@@ -1,0 +1,33 @@
+﻿@model WebLojaGamesMVC.Models.Cliente
+@{
+    ViewBag.Title = "ListarCli";
+}
+
+<h2>Listar</h2>
+<div><b>Nome do Cliente</b></div>
+<div>
+    @Model.CliNome
+</div>
+<div><b>CPF do Cliente</b></div>
+<div>
+    @Model.CliCPF
+</div>
+<div><b>Data de nascimento do Cliente</b></div>
+<div>
+    @Model.CliNasc
+</div>
+<div><b>Endereço do Cliente</b></div>
+<div>
+    @Model.CliEnd
+</div>
+<div><b>Celular do Cliente</b></div>
+<div>
+    @Model.CliCel
+</div>
+<div><b>Email do Cliente</b></div>
+<div>
+    @Model.CliEmail
+</div>
+<br />
+@Html.ActionLink("Voltar", "Index", "Home")
+

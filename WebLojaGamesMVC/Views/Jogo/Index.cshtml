@@ -1,0 +1,81 @@
+﻿@model WebLojaGamesMVC.Models.Jogo
+@{
+    ViewBag.Title = "Games";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <form action="~/jogo/listarjogo" method="post">
+        <fieldset>
+            <legend>Dados do Game</legend>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.JogoCod)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.JogoCod)
+                @Html.ValidationMessageFor(model => model.JogoCod)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.JogoNome)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.JogoNome)
+                @Html.ValidationMessageFor(model => model.JogoNome)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.JogoDev)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.JogoDev)
+                @Html.ValidationMessageFor(model => model.JogoDev)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.JogoGen)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.JogoGen)
+                @Html.ValidationMessageFor(model => model.JogoGen)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.JogoFaixa)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.JogoFaixa)
+                @Html.ValidationMessageFor(model => model.JogoFaixa)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.JogoPlat)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.JogoPlat)
+                @Html.ValidationMessageFor(model => model.JogoPlat)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.JogoAno)
+            </div>
+            <div class="editor-field">
+                <input type="date" value="@Model.JogoAno" name="JogoAno" />
+                @Html.ValidationMessageFor(model => model.JogoAno)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.JogoSin)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.JogoSin)
+                @Html.ValidationMessageFor(model => model.JogoSin)
+            </div>
+        </fieldset>
+
+        <div>
+            <br /> <input type="submit" value="Enviar" />
+        </div>
+    </form>
+}

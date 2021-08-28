@@ -1,0 +1,45 @@
+﻿@model WebLojaGamesMVC.Models.Funcionario
+@{
+    ViewBag.Title = "Listar";
+}
+
+<h2>Listar</h2>
+<div><b>Codigo do Funcionário</b></div>
+<div>
+    @Model.FuncCod
+</div>
+<div><b>Nome do Funcionário</b></div>
+<div>
+    @Model.FuncNome
+</div>
+<div><b>CPF do Funcionário</b></div>
+<div>
+    @Model.FuncCPF
+</div>
+<div><b>RG do Funcionário</b></div>
+<div>
+    @Model.FuncRG
+</div>
+<div><b>Data de nascimento do Funcionário</b></div>
+<div>
+    @Model.FuncNasc
+</div>
+<div><b>Endereço do Funcionário</b></div>
+<div>
+    @Model.FuncEnd
+</div>
+<div><b>Celular do Funcionário</b></div>
+<div>
+    @Model.FuncCel
+</div>
+<div><b>Email do Funcionário</b></div>
+<div>
+    @Model.FuncEmail
+</div>
+<div><b>Cargo do Funcionário</b></div>
+<div>
+    @Model.FuncCargo
+</div>
+<br />
+@Html.ActionLink("Voltar", "Index", "Home")
+
