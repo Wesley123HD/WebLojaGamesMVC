@@ -1,0 +1,76 @@
+﻿@model WebLojaGamesMVC.Models.Cliente
+@{
+    ViewBag.Title = "Cliente";
+}
+
+<h3>Cadastrar Cliente</h3>
+@using (Html.BeginForm("CadCliente", "Cliente", FormMethod.Post))
+{
+    @Html.ValidationSummary(true)
+
+        <fieldset>
+            <legend>Dados do Cliente</legend>
+
+            <div class="editor-label">
+                @Html.LabelFor(m => m.CliCod)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(m => m.CliCod)
+                @Html.ValidationMessageFor(m => m.CliCod)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(m => m.CliNome)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(m => m.CliNome)
+                @Html.ValidationMessageFor(m => m.CliNome)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(m => m.CliCPF)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(m => m.CliCPF)
+                @Html.ValidationMessageFor(m => m.CliCPF)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(m => m.CliNasc)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(m => m.CliNasc)
+                @Html.ValidationMessageFor(m => m.CliNasc)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(m => m.CliCEP)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(m => m.CliCEP)
+                @Html.ValidationMessageFor(m => m.CliCEP)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(m => m.CliCel)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(m => m.CliCel)
+                @Html.ValidationMessageFor(m => m.CliCel)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(m => m.CliEmail)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(m => m.CliEmail)
+                @Html.ValidationMessageFor(m => m.CliEmail)
+            </div>
+
+        </fieldset>
+
+        <div>
+            <br /> <input type="submit" value="Enviar" />
+        </div>
+}
+

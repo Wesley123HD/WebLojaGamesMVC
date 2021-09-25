@@ -15,19 +15,19 @@ namespace WebLojaGamesMVC.Models
         [StringLength(50, MinimumLength = 3, ErrorMessage = "Insira no mínimo 3 caracteres")]
         public string FuncNome { get; set; }
 
-        [MinLength(12, ErrorMessage = "CPF inválido")]
+        [StringLength(12, MinimumLength = 12, ErrorMessage = "CPF inválido")]
         public string FuncCPF { get; set; }
 
-        [MinLength(11, ErrorMessage = "RG inválido")]
+        [StringLength(11, MinimumLength = 11, ErrorMessage = "RG inválido")]
         public string FuncRG { get; set; }
 
         [Required(ErrorMessage = "Data inválida")]
-        public string FuncNasc { get; set; }
+        public DateTime FuncNasc { get; set; }
 
-        [Required(ErrorMessage = "Endereço inválida")]
-        public string FuncEnd { get; set; }
+        [StringLength(8, MinimumLength = 8, ErrorMessage = "Endereço inválida")]
+        public string FuncCEP { get; set; }
 
-        [MinLength(9, ErrorMessage = "Número de celular inválido")]
+        [StringLength(9, MinimumLength = 9, ErrorMessage = "Número de celular inválido")]
         public string FuncCel { get; set; }
 
         [RegularExpression(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*", 

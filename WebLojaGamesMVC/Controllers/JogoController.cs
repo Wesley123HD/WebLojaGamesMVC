@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebLojaGamesMVC.Models;
+using WebLojaGamesMVC.Repositorio;
 using System.Collections.ObjectModel;
 
 namespace WebLojaGamesMVC.Controllers
@@ -16,13 +17,12 @@ namespace WebLojaGamesMVC.Controllers
             Jogo jogo = new Jogo();
             return View(jogo);
         }
+        AcoesJogo acJogo = new AcoesJogo();
+
         [HttpPost]
         public ActionResult Index(Jogo jogo)
         {
-            if (ModelState.IsValid)
-            {
-                return View("ListarJogo", jogo);
-            }
+            acJogo.CadastrarJogo(jogo);
             return View(jogo);
         }
         public ActionResult ListarJogo(Jogo jogo)

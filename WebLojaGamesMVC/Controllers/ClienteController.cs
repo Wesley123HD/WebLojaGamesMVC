@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebLojaGamesMVC.Models;
+using WebLojaGamesMVC.Repositorio;
 using System.Collections.ObjectModel;
 
 namespace WebLojaGamesMVC.Controllers
@@ -13,21 +14,30 @@ namespace WebLojaGamesMVC.Controllers
         // GET: Cliente
         public ActionResult Index()
         {
-            Cliente cli = new Cliente();
+            return View();
+        }
+        
+
+        public ActionResult Cliente(Cliente cliente)
+        {
+            ac.CadastrarCliente(cliente);
+            return View(cliente);
+        }
+        Acoes ac = new Acoes();
+
+
+        [HttpPost]
+        public ActionResult CadCliente(Cliente cli)
+        {
+            ac.CadastrarCliente(cli);
             return View(cli);
         }
-        [HttpPost]
-        public ActionResult Index(Cliente cliente)
+        
+        public ActionResult ListarCli()
         {
-            if (ModelState.IsValid)
-            {
-                return View("ListarCli", cliente);
-            }
-            return View(cliente);
-        }
-        public ActionResult ListarCli(Cliente cliente)
-        {
-            return View(cliente);
+            var ExibirCliente = new Acoes();
+            var AllClientes = ExibirCliente.ListarCliente();
+            return View(AllClientes);
         }
     }
 }

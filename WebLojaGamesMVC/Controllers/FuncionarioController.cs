@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebLojaGamesMVC.Models;
+using WebLojaGamesMVC.Repositorio;
 using System.Collections.ObjectModel;
 
 namespace WebLojaGamesMVC.Controllers
@@ -16,17 +17,18 @@ namespace WebLojaGamesMVC.Controllers
             Funcionario func = new Funcionario();
             return View(func);
         }
+        AcoesFunc acFunc = new AcoesFunc();
+
         [HttpPost]
+
         public ActionResult Index(Funcionario funcionario)
         {
-            if(ModelState.IsValid)
-            {
-                return View("Listar", funcionario);
-            }
+            acFunc.CadastrarFuncionario(funcionario);
             return View(funcionario);
         }
         public ActionResult Listar(Funcionario funcionario)
         {
+            
             return View(funcionario);
         }
     }

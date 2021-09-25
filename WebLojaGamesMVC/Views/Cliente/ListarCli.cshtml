@@ -1,33 +1,62 @@
-﻿@model WebLojaGamesMVC.Models.Cliente
+﻿@model IEnumerable<WebLojaGamesMVC.Models.Cliente>
 @{
     ViewBag.Title = "ListarCli";
 }
 
-<h2>Listar</h2>
-<div><b>Nome do Cliente</b></div>
-<div>
-    @Model.CliNome
-</div>
-<div><b>CPF do Cliente</b></div>
-<div>
-    @Model.CliCPF
-</div>
-<div><b>Data de nascimento do Cliente</b></div>
-<div>
-    @Model.CliNasc
-</div>
-<div><b>Endereço do Cliente</b></div>
-<div>
-    @Model.CliEnd
-</div>
-<div><b>Celular do Cliente</b></div>
-<div>
-    @Model.CliCel
-</div>
-<div><b>Email do Cliente</b></div>
-<div>
-    @Model.CliEmail
-</div>
-<br />
-@Html.ActionLink("Voltar", "Index", "Home")
+<p>@Html.ActionLink("Cadastrar Cliente", "Cliente", "Cliente")</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(m => m.CliCod)
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.CliNome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.CliCPF)
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.CliNasc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.CliEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.CliCel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.CliCEP)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CliCod)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CliNome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CliCPF)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CliNasc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CliEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CliCel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CliCEP)
+            </td>
+        </tr>
+    }
+
+
+</table>
 

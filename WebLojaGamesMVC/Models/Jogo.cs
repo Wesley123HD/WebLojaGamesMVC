@@ -18,17 +18,17 @@ namespace WebLojaGamesMVC.Models
         [StringLength(100, MinimumLength = 3, ErrorMessage = "Insira no mínimo 3 caracteres")]
         public string JogoDev { get; set; }
 
-        [Required(ErrorMessage = "Genero não encontrado")]
+        [StringLength(20, MinimumLength = 2, ErrorMessage = "Gênero não encontrado")]
         public string JogoGen { get; set; }
 
-        [Required(ErrorMessage = "Faixa etária inválida")]
+        [StringLength(2, MinimumLength = 1, ErrorMessage = "Exemplo: 'L, 10, 12, 14, 16, 18'")]
         public string JogoFaixa { get; set; }
 
-        [Required(ErrorMessage = "Plataforma desconhecida")]
+        [StringLength(20, MinimumLength = 2, ErrorMessage = "Plataforma desconhecida")]
         public string JogoPlat { get; set; }
 
         [Required(ErrorMessage = "Data inválida")]
-        public string JogoAno { get; set; }
+        public DateTime JogoAno { get; set; }
 
         [StringLength(300, MinimumLength = 10, ErrorMessage = "Sinopse muito curta!")]
         public string JogoSin { get; set; }

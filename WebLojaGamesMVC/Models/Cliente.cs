@@ -9,19 +9,22 @@ namespace WebLojaGamesMVC.Models
 {
     public class Cliente
     {
-        [StringLength(50, MinimumLength = 3, ErrorMessage = "Insira no mínimo 3 caracteres")]
+
+        [Required(ErrorMessage = "O código é obrigatório")]
+        public ushort CliCod { get; set; }
+        [Required(ErrorMessage = "Insira no mínimo 3 caracteres")]
         public string CliNome { get; set; }
 
-        [MinLength(12, ErrorMessage = "CPF inválido")]
+        [Required(ErrorMessage = "CPF inválido")]
         public string CliCPF { get; set; }
 
         [Required(ErrorMessage = "Data inválida")]
-        public string CliNasc { get; set; }
+        public DateTime CliNasc { get; set; }
 
         [Required(ErrorMessage = "Endereço inválida")]
-        public string CliEnd { get; set; }
+        public string CliCEP { get; set; }
 
-        [MinLength(9, ErrorMessage = "Número de celular inválido")]
+        [Required(ErrorMessage = "Número de celular inválido")]
         public string CliCel { get; set; }
 
         [RegularExpression(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*",
